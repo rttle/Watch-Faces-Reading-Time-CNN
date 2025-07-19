@@ -59,6 +59,7 @@ The figure below is a numerical summary of the target variables. The original co
 
 ### Training
 A base model was created for when augmentation was implemented and when augmentation was not implemented. The base models had the same specs of: standardized target variables, image size of (224,224), 1000 image dataset, 64 batches, 100 epochs, and a learning rate of 3e-4. Based on those base models, additional models were trained to see if better results could be found. These four additional models focused on changing the scaling (standardization vs. normalization) and increasing epochs. Augmentation was also readdressed despite the Augmentation Base Model performing worse than the No Augmentation Base Model.
+
 The limited hyperparameter training was due to time constraints. A lot of troubleshooting was also done and impacted the dataloader due to working under less than ideal conditions that resulted in poor quality control of the code found throughout the notebooks. These circumstances ate a significant amount of time, and due to hardware limitations, more hyperparameter training could not be done in a timely manner. However, the issues were address enough to get a working model even if a better one could be trained given more time.
 
 ### Performance Comparison
@@ -90,6 +91,7 @@ Of the models trained, Test 3 did the best at telling the time when given an ima
 
 ### Future Work
 Further hyperparameter training could help the model better read the time based on the image. Investigation into other backbones for the CNN could also lead to better results. If hardware is not a limitation, using EfficientNetB1-7 would be worth trying. ResNet is another option to explore. More preprocessing could also be done; in particular, trying other augmentations or tweaking the current augmentations. Given that the image needs to still retain a clear indication of the 12 position, the augmentations implemented in this project was very conservative. With more time, more augmentation could be explored and tested to see how that affects the model.
+
 Instead of focusing on bettering the model, another interest could be decreasing the dataset size (1000 images used in the models produced in this repository) to see how small of a dataset could be used to create a model giving nontrivial results.
 
 ## How to reproduce results
