@@ -32,14 +32,17 @@ This project takes generated watch face images that is in a dataset that include
 
 ### Data Visualization
 The figure below shows a subset of the watch images.
+
 <img width="257" height="209" alt="image" src="https://github.com/user-attachments/assets/c5631b62-1f20-45c8-a35f-a7e85a6774c5" />
 
  
 The figure below shows data augmentation applied to a single image.
+
 <img width="396" height="395" alt="image" src="https://github.com/user-attachments/assets/06558c94-1ccb-47b3-933e-c1e7034ae238" />
 
  
 The figure below is a numerical summary of the target variables. The original column holding the time information can be seen here as a datetime type column. Of value is looking at the ranges for the different target variable columns, ignoring the datetime column of ‘text.’ This table also helps verify that the numbers used for normalization was correct.
+
 <img width="468" height="136" alt="image" src="https://github.com/user-attachments/assets/1c97ff7c-7087-459d-8d9c-c83b494ccca1" />
  
 
@@ -62,18 +65,22 @@ The limited hyperparameter training was due to time constraints. A lot of troubl
 This project approached telling the time from a watch image as a regression problem; thus, MSE and MAE were the metrics used to evaluate the models. MSE was used for the loss functions, while MAE was the main metric used for comparing the different models. Scatterplots were also used to visual the model performance by plotting Prediction vs. True values.
 
 The figure below is a table showing the metrics of the different models. Please note that Test2 used normalization as the scaling, so the range of the output values ranged from 0-1, making the metrics look smaller (better) than the rests, but as will be shown, it was actually performing worse. Thus, the best forming model is Test4.
+
  <img width="468" height="80" alt="image" src="https://github.com/user-attachments/assets/673d7ec0-0d46-4ce9-b007-758a4cd33034" />
 
 
 The figures below showcase the scatterplots for NoAugBase, Test2, and Test3. These plots show how Test3 actually has a tighter spread around the x=y line, while Test2 had larger spread (error). The base model is shown for reference.
 
 **NoAugBase Model**
+
 <img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/0f4b8147-dba2-42dd-9672-b241d3ef5a0e" />
  
 **Test2**
+
 <img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/d30062df-d278-4ccd-bf28-a5f7f9ae2a82" />
 
 **Test3**
+
 <img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/f76cdbe4-ec90-48d3-98fa-e7567a6f77f2" />
  
 
@@ -105,4 +112,3 @@ Data is from Eli Schwartz on Huggingface.co. https://huggingface.co/datasets/eli
   year = {2025},
   url = {https://huggingface.co/datasets/elischwartz/synthetic-watch-faces-dataset}
 } 
-<img width="468" height="636" alt="image" src="https://github.com/user-attachments/assets/d13ccd2b-f386-410d-acfb-2a04f1b54c50" />
