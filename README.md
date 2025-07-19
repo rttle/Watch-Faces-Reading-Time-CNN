@@ -28,7 +28,7 @@ This project takes generated watch face images that is in a dataset that include
 
 **Normalization.** The scale of the numerical columns for hour and minute were widely ranged, so normalization and standardization were implemented as an options in the dataloader module.
 
-**Image Resizing** The images were resized from (256,256) to (224,224) for use in a CNN model using EfficientNetB0 as the backbone.
+**Image Resizing.** The images were resized from (256,256) to (224,224) for use in a CNN model using EfficientNetB0 as the backbone.
 
 ### Data Visualization
 The figure below shows a subset of the watch images.
@@ -109,8 +109,13 @@ Data is from Eli Schwartz on Huggingface.co. https://huggingface.co/datasets/eli
 
 ## Citations
 @dataset{synthetic_watch_faces_dataset,
+
   author = {Eli Schwartz},
+  
   title = {Synthetic Watch Faces Dataset},
+  
   year = {2025},
+  
   url = {https://huggingface.co/datasets/elischwartz/synthetic-watch-faces-dataset}
+  
 } 
