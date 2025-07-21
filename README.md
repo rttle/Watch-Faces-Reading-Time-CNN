@@ -76,7 +76,8 @@ This project approached telling the time from a watch image as a regression prob
 
 The figure below is a table showing the metrics of the different models. Please note that Test2 used normalization as the scaling, so the range of the output values ranged from 0-1, making the metrics look smaller (better) than the rests, but as will be shown, it was actually performing worse. Thus, the best forming model is Test4.
 
- <img width="468" height="80" alt="image" src="https://github.com/user-attachments/assets/673d7ec0-0d46-4ce9-b007-758a4cd33034" />
+<img width="743" height="123" alt="image" src="https://github.com/user-attachments/assets/ce44d758-d223-4785-af9c-f7b1a8e0ac12" />
+
 
 
 The figures below showcase the scatterplots and loss functions for NoAugBase, Test2, and Test3. These plots show how Test3 actually has a tighter spread around the x=y line, while Test2 had larger spread (error). The base model is shown for reference.
