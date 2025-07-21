@@ -60,7 +60,13 @@ The figure below is a numerical summary of the target variables. The original co
 ### Training
 A base model was created for when augmentation was implemented and when augmentation was not implemented. The base models had the same specs of: standardized target variables, image size of (224,224), 1000 image dataset, 64 batches, 100 epochs, and a learning rate of 3e-4. Based on those base models, additional models were trained to see if better results could be found. These four additional models focused on changing the scaling (standardization vs. normalization) and increasing epochs. Augmentation was also readdressed despite the Augmentation Base Model performing worse than the No Augmentation Base Model.
 
-The limited hyperparameter training was due to time constraints. A lot of troubleshooting was also done and impacted the dataloader due to working under less than ideal conditions that resulted in poor quality control of the code found throughout the notebooks. These circumstances ate a significant amount of time, and due to hardware limitations, more hyperparameter training could not be done in a timely manner. However, the issues were address enough to get a working model even if a better one could be trained given more time.
+The limited hyperparameter training was due to time constraints. Due to hardware limitations, more hyperparameter training could not be done in a timely manner as running the training took significant time. Due to the failure to realize resizing the images was a skipped step, significant time was dedicated to trying to fix what appeared to be a model unable to learn any features (predictions were defaulting to the mean value of the target variable). This issue resulted in some design choices being embedded into the project and was not reassessed when producing the base models and test models seen in this repository. However, the issues were addressed enough to get a working model even if a better one could be trained given more time. Due to other priorities, majority of work for this project was done in the middle of the night, and one's brain is not always functioning at such times.
+
+Design choices as a result of troubleshooting attempts:
+- Option to standardize target variables instead of normalization,
+- Implementation of augmentation using Keras Sequential instead of a function to apply augmentation,
+- Increasing dataset size from the original plan of 200 to 1000,
+- Use of .shuffle() to shuffle the training set.
 
 ### Performance Comparison
 This project approached telling the time from a watch image as a regression problem; thus, MSE and MAE were the metrics used to evaluate the models. MSE was used for the loss functions, while MAE was the main metric used for comparing the different models. Scatterplots were also used to visual the model performance by plotting Prediction vs. True values.
@@ -93,6 +99,8 @@ Of the models trained, Test 3 did the best at telling the time when given an ima
 Further hyperparameter training could help the model better read the time based on the image. Investigation into other backbones for the CNN could also lead to better results. If hardware is not a limitation, using EfficientNetB1-7 would be worth trying. ResNet is another option to explore. More preprocessing could also be done; in particular, trying other augmentations or tweaking the current augmentations. Given that the image needs to still retain a clear indication of the 12 position, the augmentations implemented in this project was very conservative. With more time, more augmentation could be explored and tested to see how that affects the model.
 
 Instead of focusing on bettering the model, another interest could be decreasing the dataset size (1000 images used in the models produced in this repository) to see how small of a dataset could be used to create a model giving nontrivial results.
+
+
 
 ## How to reproduce results
 To reproduce results, download the parquet files from the linked repository. Then ensure that the Vision_Dataloader.py file is downloaded from this repository and run the Model_Testing.ipynb notebook also found in this repository to recreate the best model (Test 3). If the desire to create all models, also run the NoAugBaseModel.ipynb and AugBaseModel.ipynb notebooks.
