@@ -33,7 +33,8 @@ This project takes generated watch face images that is in a dataset that include
 ### Data Visualization
 The figure below shows a subset of the watch images.
 
-<img width="257" height="209" alt="image" src="https://github.com/user-attachments/assets/c5631b62-1f20-45c8-a35f-a7e85a6774c5" />
+<img width="450" height="366" alt="image" src="https://github.com/user-attachments/assets/3ac1efed-1392-4269-ac04-4ece2f6ec5f1" />
+
 
  
 The figure below shows data augmentation applied to a single image.
@@ -43,7 +44,9 @@ The figure below shows data augmentation applied to a single image.
  
 The figure below is a numerical summary of the target variables. The original column holding the time information can be seen here as a datetime type column. Of value is looking at the ranges for the different target variable columns, ignoring the datetime column of ‘text.’ This table also helps verify that the numbers used for normalization was correct.
 
-<img width="468" height="136" alt="image" src="https://github.com/user-attachments/assets/1c97ff7c-7087-459d-8d9c-c83b494ccca1" />
+<img width="720" height="205" alt="image" src="https://github.com/user-attachments/assets/79b3cfb0-fce2-47bb-a9e6-4e344ed617a8" />
+
+
  
 
 ### Problem Formulation
@@ -76,21 +79,29 @@ The figure below is a table showing the metrics of the different models. Please 
  <img width="468" height="80" alt="image" src="https://github.com/user-attachments/assets/673d7ec0-0d46-4ce9-b007-758a4cd33034" />
 
 
-The figures below showcase the scatterplots for NoAugBase, Test2, and Test3. These plots show how Test3 actually has a tighter spread around the x=y line, while Test2 had larger spread (error). The base model is shown for reference.
+The figures below showcase the scatterplots and loss functions for NoAugBase, Test2, and Test3. These plots show how Test3 actually has a tighter spread around the x=y line, while Test2 had larger spread (error). The base model is shown for reference.
 
 **NoAugBase Model**
 
-<img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/0f4b8147-dba2-42dd-9672-b241d3ef5a0e" />
+<img width="1218" height="428" alt="image" src="https://github.com/user-attachments/assets/dab63276-d283-4cad-84d9-f93a39ff1ea5" />
+
+<img width="1229" height="470" alt="image" src="https://github.com/user-attachments/assets/cc7e76c9-7631-4db9-88a6-0e449909d151" />
+
  
 **Test2**
 
-<img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/d30062df-d278-4ccd-bf28-a5f7f9ae2a82" />
+<img width="1222" height="428" alt="image" src="https://github.com/user-attachments/assets/617e0c55-9fc2-4b71-b7a1-cf9dd8b5f0d1" />
+
+<img width="1229" height="470" alt="image" src="https://github.com/user-attachments/assets/2e542a90-f2a6-45ec-900b-ae9eeba4b6b2" />
+
 
 **Test3**
 
-<img width="468" height="179" alt="image" src="https://github.com/user-attachments/assets/f76cdbe4-ec90-48d3-98fa-e7567a6f77f2" />
- 
+<img width="1214" height="428" alt="image" src="https://github.com/user-attachments/assets/556e6138-62ac-4c4c-92ca-462a7fcb939a" />
 
+<img width="1229" height="470" alt="image" src="https://github.com/user-attachments/assets/3378f043-0715-4130-82b5-cc3c78b3ac27" />
+
+ 
 
 ### Conclusions
 Of the models trained, Test 3 did the best at telling the time when given an image of a watch face. Test 3’s model did not make use of augmentation but had 100 epochs and standardized outputs.  
