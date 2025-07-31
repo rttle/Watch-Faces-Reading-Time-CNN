@@ -102,6 +102,12 @@ The figures below showcase the scatterplots and loss functions for NoAugBase, Te
 
 <img width="1229" height="470" alt="image" src="https://github.com/user-attachments/assets/3378f043-0715-4130-82b5-cc3c78b3ac27" />
 
+
+The following histograms show the difference between the true and predicted hour/minute. The hour difference mean was 0.3282 and standard deviation was 1.2274. The minute difference mean was -0.6058 and standard deviation was 10.4197. Given that both means were around zero, there was low bias. However, the standard deviation shows that 68% of the time, the model within 1.2274 hours of the true hour and 10.4197 minutes of the true minute.
+
+<img width="1461" height="470" alt="image" src="https://github.com/user-attachments/assets/7ca2beab-9dca-4064-a906-5fce5872a5f7" />
+
+
  
 
 ### Conclusions
@@ -121,6 +127,7 @@ To reproduce results, download the parquet files from the linked repository. The
 - **Vision_Preprocessing.ipynb:** Notebook that takes the dataset and prepares it for modeling. Prepares images and output variables as a tensor dataset.
 - **NoAugBaseModel.ipynb:** Notebook that contains the base trained model that does not apply augmentation to the dataset. Scaling used was standardization.
 - **AugBaseModel.ipynb:** Notebook that contains the base trained model that does apply augmentation to the dataset. Scaling used was standardization.
+- **Model_Histogram.ipynb:** Notebook that takes the best model and histogram the difference between true and predicted values to show how well the model is predicting the time.
 - **Model_Testing.ipynb:** Notebook that expands on the base models, resulting in stronger models. Takes the dataset, trains multiple models, compares the models through a metrics table. Different configurations were tested to find the best model, in particular what was tested was the scaling (standardization vs. normalization) and number of epochs.
 - **Vision_Dataloader.py:** Module created to wrap all preprocessing done to the dataset in the feasibility notebook. Arguments for dataloader function also gives ability to change: scaling, image size, and target output.
 
